@@ -10,6 +10,9 @@
   <div *ngFor="let pelicula of peliculas; let index = index" class="pelicula-contenedor">
     <div>
       Pelicula {{ index }}: {{ pelicula.titulo }}
+      <button style="margin-left: 1rem;" (click)="remover(index)">
+        Remover
+      </button>
     </div>
     <div>
       {{ pelicula.fechaLanzamiento | date:'dd/MM/yyyy' }}
