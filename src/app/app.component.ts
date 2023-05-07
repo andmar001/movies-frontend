@@ -31,28 +31,11 @@ export class AppComponent implements  OnInit {
           },
         ]
       }
-    }, 500);
+    }, 3000);
 
   }
 
   peliculasEnCines;
 
-  peliculasProximosEstrenos = [
-    {
-      titulo :'Avengers',
-      fechaLanzamiento: new Date(),
-      precio: 1400.99
-    },
-    {
-      titulo :'Avatar',
-      fechaLanzamiento: new Date('2016-11-14'),
-      precio: 1400.99
-    },
-    {
-      titulo :'Star Wars',
-      fechaLanzamiento: new Date('2016-11-14'),
-      precio: 1400.99
-    }
-  ]
-
+  peliculasProximosEstrenos = []
 }
