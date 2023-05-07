@@ -1,0 +1,23 @@
+<div *ngIf="!peliculas">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="peliculas?.length === 0">
+  No hay peliculas para mostrar
+</div>
+
+<div *ngIf="peliculas && peliculas.length > 0">
+  <div *ngFor="let pelicula of peliculas; let index = index" class="pelicula-contenedor">
+    <div>
+      Pelicula {{ index }}: {{ pelicula.titulo }}
+    </div>
+    <div>
+      {{ pelicula.fechaLanzamiento | date:'dd/MM/yyyy' }}
+    </div>
+    <div>
+      {{ pelicula.precio | currency:'USD':'symbol':'1.2-2' }}
+    </div>
+  </div>
+</div>
+
+

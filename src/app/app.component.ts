@@ -5,41 +5,54 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements  OnInit {
   title = 'front-end';
 
   constructor() {}
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.peliculas = [
-        {
-          titulo: 'Spiderman',
-          fechaLanzamiento: '2020-10-10',
-          precio: 1000,
-        },
-        {
-          titulo: 'Avengers',
-          fechaLanzamiento: '2020-10-10',
-          precio: 1000,
-        },
-        {
-          titulo: 'Batman',
-          fechaLanzamiento: '2020-10-10',
-          precio: 1000,
-        },
-        {
-          titulo: 'Superman',
-          fechaLanzamiento: '2020-10-10',
-          precio: 3000,
-        },
-      ]
-    }, 1000);
+      {
+        this.peliculasEnCines = [
+          {
+            titulo :'Spiderman',
+            fechaLanzamiento: new Date(),
+            precio: 1400.99
+          },
+          {
+            titulo :'Moana',
+            fechaLanzamiento: new Date('2016-11-14'),
+            precio: 1400.99
+          },
+          {
+            titulo :'Los Vengadores',
+            fechaLanzamiento: new Date('2016-11-14'),
+            precio: 1400.99
+          },
+        ]
+      }
+    }, 500);
+
   }
 
-  peliculas;
+  peliculasEnCines;
 
-  duplicarNumeros(valor:number):number{
-    return valor * 2;
-  }
+  peliculasProximosEstrenos = [
+    {
+      titulo :'Avengers',
+      fechaLanzamiento: new Date(),
+      precio: 1400.99
+    },
+    {
+      titulo :'Avatar',
+      fechaLanzamiento: new Date('2016-11-14'),
+      precio: 1400.99
+    },
+    {
+      titulo :'Star Wars',
+      fechaLanzamiento: new Date('2016-11-14'),
+      precio: 1400.99
+    }
+  ]
+
 }

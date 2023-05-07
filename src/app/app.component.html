@@ -1,23 +1,7 @@
-<h2>Datos de las Peliculas</h2>
+<h2>En cines</h2>
 
-<div *ngIf="!peliculas">
-  <mat-spinner></mat-spinner>
-</div>
+<app-listado-peliculas [peliculas]="peliculasEnCines" ></app-listado-peliculas>
 
-<div *ngIf="peliculas?.length === 0">
-  No hay peliculas para mostrar
-</div>
+<h2>Futuros Estrenos</h2>
 
-<div *ngIf="peliculas && peliculas.length > 0">
-  <div *ngFor="let pelicula of peliculas; let index = index" class="pelicula-contenedor">
-    <div>
-      Pelicula {{ index }}: {{ pelicula.titulo }}
-    </div>
-    <div>
-      {{ pelicula.fechaLanzamiento | date:'dd/MM/yyyy' }}
-    </div>
-    <div>
-      {{ pelicula.precio | currency:'USD':'symbol':'1.2-2' }}
-    </div>
-  </div>
-</div>
+<app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
