@@ -53,4 +53,8 @@ export class AppComponent implements  OnInit {
   peliculasEnCines;
 
   peliculasProximosEstrenos = []
+
+  manajarRated(voto:number):void {
+    alert(voto)
+  }
 }
