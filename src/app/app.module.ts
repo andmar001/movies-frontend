@@ -8,13 +8,15 @@ import { MaterialModule } from './material/material.module';
 import { ListadoPeliculasComponent } from './peliculas/listado-peliculas/listado-peliculas.component';
 import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
 import { MenuComponent } from './menu/menu.component';
+import { RatingComponent } from './utilidades/rating/rating.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoPeliculasComponent,
     ListadoGenericoComponent,
-    MenuComponent
+    MenuComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
