@@ -1,10 +1,17 @@
-<h2>En cines</h2>
+<app-menu></app-menu>
 
-<app-listado-peliculas [peliculas]="peliculasEnCines" ></app-listado-peliculas>
+<div class="contenedor">
 
-<h2>Futuros Estrenos</h2>
+  <h2>En cines</h2>
 
-<app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
+  <app-listado-peliculas [peliculas]="peliculasEnCines" ></app-listado-peliculas>
 
-<input type="file" style="display: none;" #cargador>
-<button (click)="cargador.click()">Cargar Archivo</button>
+  <h2>Futuros Estrenos</h2>
+
+  <app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
+
+  <input type="file" style="display: none;" #cargador>
+  <button (click)="cargador.click()">Cargar Archivo</button>
+
+</div>
+

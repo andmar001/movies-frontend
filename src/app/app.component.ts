@@ -29,9 +29,39 @@ export class AppComponent implements  OnInit {
             fechaLanzamiento: new Date('2016-11-14'),
             precio: 1400.99
           },
+          {
+            titulo :'Spiderman',
+            fechaLanzamiento: new Date(),
+            precio: 1400.99
+          },
+          {
+            titulo :'Moana',
+            fechaLanzamiento: new Date('2016-11-14'),
+            precio: 1400.99
+          },
+          {
+            titulo :'Los Vengadores',
+            fechaLanzamiento: new Date('2016-11-14'),
+            precio: 1400.99
+          },
+          {
+            titulo :'Spiderman',
+            fechaLanzamiento: new Date(),
+            precio: 1400.99
+          },
+          {
+            titulo :'Moana',
+            fechaLanzamiento: new Date('2016-11-14'),
+            precio: 1400.99
+          },
+          {
+            titulo :'Los Vengadores',
+            fechaLanzamiento: new Date('2016-11-14'),
+            precio: 1400.99
+          },
         ]
       }
-    }, 3000);
+    }, 500);
 
   }
 
