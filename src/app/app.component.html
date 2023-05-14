@@ -10,9 +10,5 @@
 
   <app-listado-peliculas [peliculas]="peliculasProximosEstrenos"></app-listado-peliculas>
 
-  <input type="file" style="display: none;" #cargador>
-  <button (click)="cargador.click()">Cargar Archivo</button>
-
 </div>
 
-<app-rating (rated)="manajarRated($event)" ></app-rating>
