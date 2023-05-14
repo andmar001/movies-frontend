@@ -12,3 +12,6 @@
 # referencia a un elemento del DOM
 <input type="file" style="display: none;" #cargador>
 <button (click)="cargador.click()">Cargar Archivo</button>
+
+# navegacion por javascript
+this.router.navigate(['/home']);
