@@ -15,3 +15,18 @@
 
 # navegacion por javascript
 this.router.navigate(['/home']);
+
+# parametros de ruta  -- activated route
+constructor(private activatedRoute: ActivatedRoute) { }
+ngOnInit(): void {
+    this.activatedRoute.params.subscribe( ({id}) => {
+      console.log(id);
+    });
+  }
+- para obtener los parametros de la ruta se debe usar activatedRoute
+
+# wildcard - ruta por defecto
+{ path: '**', redirectTo: 'home' }
+
+# git - corregir ultimo commit
+git commit --amend --no-edit
