@@ -9,6 +9,8 @@ import { ListadoPeliculasComponent } from './peliculas/listado-peliculas/listado
 import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
 import { MenuComponent } from './menu/menu.component';
 import { RatingComponent } from './utilidades/rating/rating.component';
+import { LangingPageComponent } from './langing-page/langing-page.component';
+import { IndiceGenerosComponent } from './generos/indice-generos/indice-generos.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { RatingComponent } from './utilidades/rating/rating.component';
     ListadoPeliculasComponent,
     ListadoGenericoComponent,
     MenuComponent,
-    RatingComponent
+    RatingComponent,
+    LangingPageComponent,
+    IndiceGenerosComponent
   ],
   imports: [
     BrowserModule,
