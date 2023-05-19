@@ -1,5 +1,7 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-filtro-peliculas',
@@ -7,7 +9,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./filtro-peliculas.component.scss'],
 })
 export class FiltroPeliculasComponent implements OnInit {
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(
+    private _formBuilder: FormBuilder,
+    private _location:Location,
+    private _activatedRoute:ActivatedRoute) {}
 
   form: FormGroup;
 
@@ -58,10 +63,59 @@ export class FiltroPeliculasComponent implements OnInit {
       this.fomrularioOriginal
     );
 
+    this.leerValoresURL();
+    this.buscarPeliculas(this.form.value)
+
     //Values changes 'observable' para hacer eventos reactivos y cargar nuestro filtro de busqueda
     this.form.valueChanges.subscribe((valores) => {
       this.peliculas = this.peliculasOriginal; // resetear las peliculas al hacer nueva busqueda
       this.buscarPeliculas(valores);
+      this.escribirParametrosBusquedaEnURL()
+    });
+  }
+
+  //query strings
+  private escribirParametrosBusquedaEnURL(){
+    var queryString = [];
+
+    var valoresFormulario = this.form.value;
+
+    if (valoresFormulario.titulo) {
+      queryString.push(`titulo=${valoresFormulario.titulo}`)
+    }
+    if (valoresFormulario.generoId != '0') {
+      queryString.push(`generoId=${valoresFormulario.generoId}`)
+    }
+    if (valoresFormulario.proximosEstrenos) {
+      queryString.push(`proximosEstrenos=${valoresFormulario.proximosEstrenos}`)
+    }
+    if (valoresFormulario.enCines) {
+      queryString.push(`enCines=${valoresFormulario.enCines}`)
+    }
+
+    //colocar en la url el valor
+    this._location.replaceState('peliculas/buscar', queryString.join('&'))
+  }
+
+  private leerValoresURL(){
+    this._activatedRoute.queryParams.subscribe((params:any)=>{
+      var objeto:any = {};
+
+      if (params.titulo) {
+        objeto.titulo = params.titulo;
+      }
+      if (params.generoId) {
+        objeto.generoId = Number(params.generoId);
+      }
+      if (params.proximosEstrenos) {
+        objeto.proximosEstrenos = params.proximosEstrenos;
+      }
+      if (params.enCines) {
+        objeto.enCines = params.enCines;
+      }
+
+      this.form.patchValue(objeto)
+
     });
   }
 
