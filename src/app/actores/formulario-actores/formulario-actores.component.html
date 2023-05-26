@@ -11,6 +11,8 @@
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
+  <app-input-img [urlImagenActual]="modelo?.foto" (archivoSeleccionado)="archivoSeleccionado($event)"></app-input-img>
+
   <div>
     <button mat-flat-button color="primary" [disabled]="form.invalid">
       Guardar Cambios
