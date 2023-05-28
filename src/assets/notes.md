@@ -33,3 +33,9 @@ git commit --amend --no-edit
 
 # markdown
 npm i ngx-markdown
+
+# npm i leaflet@1.7.1
+# npm i @asymmetrik/ngx-leaflet@15.0.1
+# npm i --save-dev @types/leaflet
+to work with maps
+configurar leaflet en angular.json - styles

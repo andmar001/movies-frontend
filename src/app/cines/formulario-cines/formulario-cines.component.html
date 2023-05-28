@@ -4,6 +4,11 @@
     <input formControlName="nombre" matInput>
     <mat-error *ngIf="form.invalid">El campo nombre es requerido</mat-error>
   </mat-form-field>
+
+  <div>
+    <app-mapa></app-mapa>
+  </div>
+
   <div>
     <button mat-flat-button color="primary" [disabled]="form.invalid">
       Guardar Cambios
