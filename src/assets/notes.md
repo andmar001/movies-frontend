@@ -30,3 +30,6 @@ ngOnInit(): void {
 
 # git - corregir ultimo commit
 git commit --amend --no-edit
+
+# markdown
+npm i ngx-markdown

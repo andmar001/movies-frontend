@@ -31,5 +31,4 @@ export class InputImgComponent {
       this.urlImagenActual = null   // para que se sobreescriban las imagenes
     }
   }
-
 }
