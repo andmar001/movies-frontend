@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { cineCreacionDTO } from '../cine';
 
 @Component({
   selector: 'app-formulario-cines',
@@ -7,4 +9,34 @@ import { Component } from '@angular/core';
 })
 export class FormularioCinesComponent {
 
+  constructor(
+    private _formBuilder:FormBuilder
+  ){}
+
+  form:FormGroup;
+
+  @Input()
+  modelo:cineCreacionDTO;
+
+  @Output()
+  guardarCambios:EventEmitter<cineCreacionDTO> = new EventEmitter<cineCreacionDTO>();
+
+  ngOnInit(): void {
+    this.form = this._formBuilder.group({
+      nombre:[
+        '',
+        {
+          validators:[Validators.required]
+        }
+      ]
+    });
+
+    if (this.modelo !== undefined) {
+      this.form.patchValue(this.modelo)
+    }
+  }
+
+  OnSubmit(){
+    this.guardarCambios.emit(this.form.value)
+  }
 }
