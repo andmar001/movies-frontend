@@ -1,0 +1,49 @@
+<form (submit)="guardarCambios()" [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Titulo</mat-label>
+    <input formControlName="titulo" matInput>
+    <mat-error>
+      El campo título es requerido
+    </mat-error>
+  </mat-form-field>
+
+  <div class="contenedor-checkbox">
+    <mat-checkbox formControlName="enCines">En cines</mat-checkbox>
+  </div>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Trailer</mat-label>
+    <input formControlName="trailer" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Fecha de Lanzamiento</mat-label>
+    <input formControlName="fechaLanzamiento" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <h3>Seleccionar Poster</h3>
+  <app-input-img
+    [urlImagenActual]="modelo?.['poster']"
+    (archivoSeleccionado)="archivoSeleccionado($event)"
+    >
+  </app-input-img>
+
+  <h3>Resumen de la pelicula</h3>
+  <app-input-markdown
+    [contenidoMarkdown]="modelo?.resumen"
+    (changeMarkdown)="changeMarkdown($event)"
+    [placeHolderTextarea]="'Resumen'"
+    >
+  </app-input-markdown>
+
+  <div>
+    <button mat-flat-button color="primary">
+      Guardar Cambios
+    </button>
+    <a mat-stroked-button routerLink="/">
+      Cancelar
+    </a>
+  </div>
+</form>

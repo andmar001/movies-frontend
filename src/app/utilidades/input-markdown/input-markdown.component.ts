@@ -6,8 +6,11 @@ import { Component, Output, Input, EventEmitter } from '@angular/core';
   styleUrls: ['./input-markdown.component.scss'],
 })
 export class InputMarkdownComponent {
-
+  @Input()
   contenidoMarkdown = ''
+
+  @Input()
+  placeHolderTextarea:string = 'Texto'
 
   @Output()
   changeMarkdown = new EventEmitter<string>();
