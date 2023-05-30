@@ -5,8 +5,14 @@
     <mat-error *ngIf="form.invalid">El campo nombre es requerido</mat-error>
   </mat-form-field>
 
+  <h3>Selecciones el cine en el mapa</h3>
+
   <div>
-    <app-mapa></app-mapa>
+    <app-mapa
+    (coordenadaSeleccionada)="coordenadaSeleccionada($event)"
+    [coordenadasIniciales]="coordenadaInicial"
+    >
+    </app-mapa>
   </div>
 
   <div>

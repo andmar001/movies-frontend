@@ -30,8 +30,8 @@ import { FormularioActoresComponent } from './actores/formulario-actores/formula
 import { InputImgComponent } from './utilidades/input-img/input-img.component';
 import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdown.component';
 import { FormularioCinesComponent } from './cines/formulario-cines/formulario-cines.component';
-import { from, fromEvent } from 'rxjs';
 import { MapaComponent } from './utilidades/mapa/mapa.component';
+
 
 @NgModule({
   declarations: [
