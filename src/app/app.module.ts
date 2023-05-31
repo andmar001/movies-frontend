@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MarkdownModule } from 'ngx-markdown'
 import { LeafletModule } from '@asymmetrik/ngx-leaflet'
 
@@ -68,6 +69,7 @@ import { FormularioPeliculasComponent } from './peliculas/formulario-peliculas/f
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
+    FormsModule,
     LeafletModule,
     MarkdownModule.forRoot()
   ],

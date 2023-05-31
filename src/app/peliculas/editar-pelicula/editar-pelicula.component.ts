@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PeliculaDTO } from '../pelicula';
+import { PeliculaCreacionDTO, PeliculaDTO } from '../pelicula';
 
 @Component({
   selector: 'app-editar-pelicula',
@@ -15,6 +15,10 @@ export class EditarPeliculaComponent {
     resumen:'lorem antonio andrade mares',
     fechaLanzamiento: new Date,
     poster:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Venom_Cosplay.jpg/480px-Venom_Cosplay.jpg'
+  }
+
+  guardarCambios(pelicula:PeliculaCreacionDTO){
+    console.log(pelicula)
   }
 
 }
