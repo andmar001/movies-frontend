@@ -45,8 +45,15 @@
     >
   </app-selector-multiple>
 
+  <h3>Seleccione los cines</h3>
+  <app-selector-multiple
+    [Seleccionados]="cinesSeleccionados"
+    [NoSeleccionados]="cinesNoSeleccionados"
+    >
+  </app-selector-multiple>
+
   <div>
-    <button mat-flat-button color="primary">
+    <button mat-flat-button color="primary"  [disabled]="!form.valid">
       Guardar Cambios
     </button>
     <a mat-stroked-button routerLink="/">
