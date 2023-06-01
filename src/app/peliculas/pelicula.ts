@@ -4,7 +4,7 @@ export interface PeliculaCreacionDTO{
   enCines:boolean;
   fechaLanzamiento:Date;
   trailer:string;
-  porter:File;
+  poster:File;
 }
 
 export interface PeliculaDTO{

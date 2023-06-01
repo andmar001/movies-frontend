@@ -33,6 +33,7 @@ import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdo
 import { FormularioCinesComponent } from './cines/formulario-cines/formulario-cines.component';
 import { MapaComponent } from './utilidades/mapa/mapa.component';
 import { FormularioPeliculasComponent } from './peliculas/formulario-peliculas/formulario-peliculas.component';
+import { SelectorMultipleComponent } from './utilidades/selector-multiple/selector-multiple.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { FormularioPeliculasComponent } from './peliculas/formulario-peliculas/f
     InputMarkdownComponent,
     FormularioCinesComponent,
     MapaComponent,
-    FormularioPeliculasComponent
+    FormularioPeliculasComponent,
+    SelectorMultipleComponent
   ],
   imports: [
     BrowserModule,

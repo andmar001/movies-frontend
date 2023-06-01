@@ -38,6 +38,13 @@
     >
   </app-input-markdown>
 
+  <h3>Seleccione los géneros</h3>
+  <app-selector-multiple
+    [Seleccionados]="generosSeleccionados"
+    [NoSeleccionados]="generosNoSeleccionados"
+    >
+  </app-selector-multiple>
+
   <div>
     <button mat-flat-button color="primary">
       Guardar Cambios
