@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +15,7 @@ import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-
 import { MenuComponent } from './menu/menu.component';
 import { RatingComponent } from './utilidades/rating/rating.component';
 import { LangingPageComponent } from './langing-page/langing-page.component';
-import { IndiceGenerosComponent } from './generos/indice-generos/indice-generos.component';
+import IndiceGenerosComponent from './generos/indice-generos/indice-generos.component';
 import { CrearGeneroComponent } from './generos/crear-genero/crear-genero.component';
 import { IndiceActoresComponent } from './actores/indice-actores/indice-actores.component';
 import { CrearActorComponent } from './actores/crear-actor/crear-actor.component';
@@ -68,6 +69,7 @@ import { AutocompleteActoresComponent } from './actores/autocomplete-actores/aut
     AutocompleteActoresComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
