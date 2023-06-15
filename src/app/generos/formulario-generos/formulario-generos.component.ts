@@ -18,7 +18,11 @@ export class FormularioGenerosComponent {
   form:FormGroup;
 
   @Input()
+  errores: string[]=[];
+
+  @Input()
   modelo: generoCreacionDTO;
+
 
   @Output()
   onSubmit:EventEmitter<generoCreacionDTO> = new EventEmitter<generoCreacionDTO>();

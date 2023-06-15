@@ -36,6 +36,7 @@ import { MapaComponent } from './utilidades/mapa/mapa.component';
 import { FormularioPeliculasComponent } from './peliculas/formulario-peliculas/formulario-peliculas.component';
 import { SelectorMultipleComponent } from './utilidades/selector-multiple/selector-multiple.component';
 import { AutocompleteActoresComponent } from './actores/autocomplete-actores/autocomplete-actores.component';
+import { MostrarErroresComponent } from './utilidades/mostrar-errores/mostrar-errores.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { AutocompleteActoresComponent } from './actores/autocomplete-actores/aut
     MapaComponent,
     FormularioPeliculasComponent,
     SelectorMultipleComponent,
-    AutocompleteActoresComponent
+    AutocompleteActoresComponent,
+    MostrarErroresComponent
   ],
   imports: [
     HttpClientModule,

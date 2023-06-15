@@ -2,6 +2,7 @@ import { Component  } from '@angular/core';
 import { Router } from '@angular/router';
 import { generoCreacionDTO } from '../genero';
 import { GenerosService } from '../generos.service';
+import { parsearErrorAPI } from 'src/app/utilidades/utilidades';
 
 @Component({
   selector: 'app-crear-genero',
@@ -9,6 +10,8 @@ import { GenerosService } from '../generos.service';
   styleUrls: ['./crear-genero.component.scss']
 })
 export class CrearGeneroComponent {
+
+  errores :string[]= []
 
   constructor(
     private _router:Router,
@@ -19,8 +22,8 @@ export class CrearGeneroComponent {
       .subscribe(()=>{
         this._router.navigate(['/generos']);
       },
-      error =>{
-        console.error(error)
+      (error) =>{
+        this.errores = parsearErrorAPI(error)
       })
   }
 
