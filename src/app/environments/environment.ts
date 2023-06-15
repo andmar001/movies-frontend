@@ -1,5 +1,5 @@
 
 export const environment = {
   production:false,
-  apiURL:'https://localhost:44342/api/generos'
+  apiURL:'https://localhost:44342/api/'
 };

@@ -21,7 +21,7 @@ export class FormularioGenerosComponent {
   modelo: generoCreacionDTO;
 
   @Output()
-  submit:EventEmitter<generoCreacionDTO> = new EventEmitter<generoCreacionDTO>();
+  onSubmit:EventEmitter<generoCreacionDTO> = new EventEmitter<generoCreacionDTO>();
 
   ngOnInit(): void {
     this.form = this._formBuilder.group({
@@ -36,7 +36,7 @@ export class FormularioGenerosComponent {
   }
 
   guardarCambios(){
-    this.submit.emit(this.form.value)
+    this.onSubmit.emit(this.form.value)
   }
 
   obtenerErrorCampoNombre(){

@@ -11,8 +11,11 @@ export default class IndiceGenerosComponent implements OnInit {
   constructor( private _generosService:GenerosService ){}
 
   ngOnInit(): void {
-    const generos = this._generosService.obtenerTodos();
-    console.log(generos)
+    this._generosService.obtenerTodos()
+      .subscribe(generos =>{
+        console.log(generos)
+      },
+      error => console.log(error))
   }
 
 }
