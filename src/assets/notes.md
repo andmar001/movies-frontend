@@ -39,3 +39,6 @@ npm i ngx-markdown
 # npm i --save-dev @types/leaflet
 to work with maps
 configurar leaflet en angular.json - styles
+
+# swet alert notificaciones 
+npm install --save sweetalert2 @sweetalert2/ngx-sweetalert2

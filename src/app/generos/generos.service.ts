@@ -33,4 +33,7 @@ export class GenerosService {
     return this._http.put(`${this.apiURL}/${id}`, genero)
   }
 
+  public borrar(id:number){
+    return this._http.delete(`${this.apiURL}/${id}`)
+  }
 }
