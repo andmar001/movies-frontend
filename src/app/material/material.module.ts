@@ -16,7 +16,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
 import { DragDropModule } from '@angular/cdk/drag-drop';  //?to work with drag and drop
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 @NgModule({
   declarations: [],
   imports: [
@@ -36,7 +36,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';  //?to work with drag a
     MatTabsModule,
     MatAutocompleteModule,
     MatTableModule,
-    DragDropModule
+    DragDropModule,
+    MatPaginatorModule
   ]
 })
 export class MaterialModule { }
