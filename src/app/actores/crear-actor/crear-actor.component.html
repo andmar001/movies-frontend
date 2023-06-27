@@ -1,3 +1,5 @@
 <h1>Crear Actor</h1>
 
-<app-formulario-actores (OnSubmit)="guardarCambios($event)"></app-formulario-actores>
+<app-formulario-actores (OnSubmit)="guardarCambios($event)"
+                        [errores]="errores" >
+</app-formulario-actores>

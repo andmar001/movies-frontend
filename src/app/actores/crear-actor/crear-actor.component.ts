@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { actorCreacionDTO } from '../actor';
+import { ActoresService } from '../actores.service';
+import { Router } from '@angular/router';
+import { parsearErrorAPI } from 'src/app/utilidades/utilidades';
 
 @Component({
   selector: 'app-crear-actor',
@@ -8,9 +11,18 @@ import { actorCreacionDTO } from '../actor';
 })
 export class CrearActorComponent {
 
+  constructor( private _actoresService:ActoresService,
+               private _router:Router) { }
+
+  errores:string[]=[];
 
   guardarCambios(actor:actorCreacionDTO){
-    console.log(actor);
+    this._actoresService.crear(actor).subscribe(()=>{
+      this._router.navigate(['/actores']);
+    },
+    errores =>{
+      this.errores = parsearErrorAPI(errores);
+    });
   }
 
 }
