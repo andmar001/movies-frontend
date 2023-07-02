@@ -42,7 +42,7 @@ export class MapaComponent implements OnInit {
       icon:icon({
         iconSize: [25, 41],
         iconAnchor: [13, 41],
-        iconUrl: 'assets/marker-icon.png',
+        iconUrl: 'assets/marker-icon-2x.png',
         iconRetinaUrl: 'assets/marker-icon-2x.png',
         shadowUrl: 'assets/marker-shadow.png'
       })

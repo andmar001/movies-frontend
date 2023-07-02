@@ -17,6 +17,9 @@ export class FormularioCinesComponent {
   form:FormGroup;
 
   @Input()
+  errores:string[] = [];
+
+  @Input()
   modelo:cineCreacionDTO;
 
   @Output()

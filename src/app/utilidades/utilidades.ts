@@ -34,6 +34,7 @@ export function parsearErrorAPI(response:any):string[]{
 
 //año, mes y dia
 export function formatearFecha(date:Date){
+  date = new Date(date);  // conversion a fecha
   const formato = new Intl.DateTimeFormat('en', {
     year: 'numeric',
     month: '2-digit',
