@@ -21,8 +21,16 @@ export class CinesService {
     return this._http.get<cineDTO[]>(this.apiURL,{observe:'response' ,params})
   }
 
+  public obtenerPorId(id:number):Observable<cineDTO>{
+    return this._http.get<cineDTO>(`${this.apiURL}/${id}`);
+  }
+
   public crear(cine:cineCreacionDTO){
     return this._http.post(this.apiURL,cine);
+  }
+
+  public editar(id:number,cine:cineCreacionDTO){
+    return this._http.put(`${this.apiURL}/${id}`,cine);
   }
 
   public borrar(id:number){
