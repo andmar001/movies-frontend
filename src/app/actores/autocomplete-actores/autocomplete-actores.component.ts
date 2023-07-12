@@ -1,8 +1,10 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatTable } from '@angular/material/table';
+import { actorPeliculaDTO } from '../actor';
+import { ActoresService } from '../actores.service';
 
 @Component({
   selector: 'app-autocomplete-actores',
@@ -11,28 +13,24 @@ import { MatTable } from '@angular/material/table';
 })
 export class AutocompleteActoresComponent implements OnInit{
 
-  constructor(){}
+  constructor( private _actoresService:ActoresService){}
 
   control:FormControl = new FormControl;   //manejar un campo de manera individual
 
-  actores = [
-    { nombre:'Tom Holland', personaje:'', foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Tom_Holland_Bali_2019_1_%28cropped%29_%28cropped%29.jpg/330px-Tom_Holland_Bali_2019_1_%28cropped%29_%28cropped%29.jpg'},
-    { nombre:'Tom Hanks', personaje:'', foto:'https://m.media-amazon.com/images/M/MV5BMTQ2MjMwNDA3Nl5BMl5BanBnXkFtZTcwMTA2NDY3NQ@@._V1_QL75_UY414_CR3,0,280,414_.jpg'},
-    { nombre:'Samuel Jackson', personaje:'', foto:'https://m.media-amazon.com/images/M/MV5BMTQ1NTQwMTYxNl5BMl5BanBnXkFtZTYwMjA1MzY1._V1_QL75_UX100_CR0,1,100,148_.jpg'}
-  ]
+  @Input()
+  actoresSeleccionados:actorPeliculaDTO[] = []
 
-  actoresOriginal = this.actores;
-
-  actoresSeleccionados = []
+  actoresAMostrar:actorPeliculaDTO[] = [];
 
   columnasAMostrar = ['imagen', 'nombre', 'personaje', 'acciones'];
 
   @ViewChild(MatTable) table : MatTable<any>;
 
   ngOnInit(): void {
-    this.control.valueChanges.subscribe(valor =>{
-      this.actores = this.actoresOriginal;
-      this.actores = this.actores.filter(actor => actor.nombre.indexOf(valor) !== -1);   // to filter
+    this.control.valueChanges.subscribe(nombre =>{
+      this._actoresService.obtenerPorNombre(nombre).subscribe(actores =>{
+        this.actoresAMostrar = actores;
+      })
     });
   }
 

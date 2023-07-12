@@ -13,7 +13,7 @@
     (optionSelected)="optionSelected($event)"
     >
 
-    <mat-option *ngFor="let opcion of actores; let index = index;" [value]="opcion">
+    <mat-option *ngFor="let opcion of actoresAMostrar; let index = index;" [value]="opcion">
       <img [src]="opcion.foto" [alt]="opcion.nombre">{{ opcion.nombre }}
     </mat-option>
 
