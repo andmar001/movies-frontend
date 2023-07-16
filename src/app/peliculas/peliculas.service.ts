@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 import { Observable } from 'rxjs';
-import { PeliculaCreacionDTO, PeliculaPostGet } from './pelicula';
+import { PeliculaCreacionDTO, PeliculaDTO, PeliculaPostGet } from './pelicula';
 import { formatearFecha } from '../utilidades/utilidades';
 
 @Injectable({
@@ -13,6 +13,10 @@ export class PeliculasService {
   constructor( private _http:HttpClient ) { }
 
   private apiURL = environment.apiURL + 'peliculas';
+
+  public obtenerPorId(id:number):Observable<PeliculaDTO> {
+    return this._http.get<PeliculaDTO>(`${this.apiURL}/${id}`);
+  }
 
   public PostGet():Observable<PeliculaPostGet> {
     return this._http.get<PeliculaPostGet>(`${this.apiURL}/PostGet`);
