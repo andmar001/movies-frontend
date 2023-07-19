@@ -35,7 +35,7 @@ export class DetallePeliculaComponent implements OnInit {
             return {
               latitud: cine.latitud,
               longitud: cine.longitud,
-              mensaje: cine.nombre,
+              mensaje: cine.nombre
             };
           })
         });
@@ -50,12 +50,13 @@ export class DetallePeliculaComponent implements OnInit {
 
       var video_id = url.split('v=')[1];
       var posicionAmpersand = video_id.indexOf('&');
-      // validar que no exista el caracter &
-      if (posicionAmpersand !== -1) {
+      if (posicionAmpersand !== -1){
         video_id = video_id.substring(0, posicionAmpersand);
       }
 
-      return this._domSanitizer.bypassSecurityTrustUrl(`https://www.youtube.com/embed/${video_id}`);  //para evitar que el usuario inyecte codigo malicioso
+      return this._domSanitizer
+        .bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${video_id}`)
+        //para evitar que el usuario inyecte codigo malicioso
     }
 
 }
