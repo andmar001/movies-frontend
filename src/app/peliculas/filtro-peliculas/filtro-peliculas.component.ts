@@ -22,32 +22,8 @@ export class FiltroPeliculasComponent implements OnInit {
     { id: 3, nombre: 'Comedia' },
   ];
 
-  peliculas = [
-    {
-      titulo: 'spiderman',
-      enCines: false,
-      proximosEstrenos: true,
-      generos: [1, 2],
-      poster:
-        'https://upload.wikimedia.org/wikipedia/commons/5/52/Spider-Man.jpg',
-    },
-    {
-      titulo: 'moana',
-      enCines: true,
-      proximosEstrenos: false,
-      generos: [3],
-      poster:
-        'https://cdn.pixabay.com/photo/2021/02/08/19/18/moana-5996159_1280.png',
-    },
-    {
-      titulo: 'dragon ball z',
-      enCines: false,
-      proximosEstrenos: false,
-      generos: [1, 3],
-      poster:
-        'https://cdn.pixabay.com/photo/2018/09/28/09/13/anime-3708776_640.png',
-    },
-  ];
+  peliculas = []
+
 
   peliculasOriginal = this.peliculas;
 
