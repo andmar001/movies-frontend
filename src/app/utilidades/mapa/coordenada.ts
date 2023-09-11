@@ -5,5 +5,5 @@ export interface Coordenada{
 
 // herencia de interfaces
 export interface CoordenadaConMensaje extends Coordenada{
-  mensaje:string;
+  mensaje?:string;
 }

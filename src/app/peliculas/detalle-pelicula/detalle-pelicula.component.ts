@@ -21,7 +21,7 @@ export class DetallePeliculaComponent implements OnInit {
     pelicula:PeliculaDTO;
     fechaLanzamiento:Date;
     trailerUrl:SafeResourceUrl;  //para evitar que el usuario inyecte codigo malicioso
-    coordenadas:CoordenadaConMensaje[];
+    coordenadas:CoordenadaConMensaje[] = [];
 
     ngOnInit(): void {
       //obtener id por parametro
@@ -43,7 +43,7 @@ export class DetallePeliculaComponent implements OnInit {
     }
 
     //metodo para generar la url de youtube
-    private generarUrlYoutubeEmbed(url:any):SafeResourceUrl{
+    generarUrlYoutubeEmbed(url:any):SafeResourceUrl{
       if (!url) {
         return '';
       }

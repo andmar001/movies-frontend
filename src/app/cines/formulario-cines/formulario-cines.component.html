@@ -9,15 +9,14 @@
 
   <h3>Selecciones el cine en el mapa</h3>
 
-  <div>
+  <div style="position: relative;">
     <app-mapa
     (coordenadaSeleccionada)="coordenadaSeleccionada($event)"
     [coordenadasIniciales]="coordenadaInicial"
-    >
-    </app-mapa>
-  </div>
+    ></app-mapa>
+</div>
 
-  <div>
+  <div style="margin-top: 650px;">
     <button mat-flat-button color="primary" [disabled]="form.invalid">
       Guardar Cambios
     </button>

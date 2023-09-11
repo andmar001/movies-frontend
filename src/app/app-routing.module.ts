@@ -56,7 +56,7 @@ const routes: Routes = [
     path:'peliculas/buscar', component:FiltroPeliculasComponent
   },
   {
-    path:'peliculas/:id', component:DetallePeliculaComponent
+    path:'pelicula/:id', component:DetallePeliculaComponent
   },
   {
     path:'**', redirectTo: ''
