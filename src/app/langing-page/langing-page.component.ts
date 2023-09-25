@@ -12,10 +12,7 @@ export class LangingPageComponent implements OnInit {
   constructor( private _peliculasService:PeliculasService ) { }
 
   ngOnInit(): void {
-    this._peliculasService.obtenerLandingPage().subscribe(landingPage => {
-      this.peliculasEnCines = landingPage.enCines;
-      this.peliculasProximosEstrenos = landingPage.proximosEstrenos;
-    });
+    this.cargarDatos();
   }
 
   peliculasEnCines:PeliculaDTO[];
@@ -24,6 +21,17 @@ export class LangingPageComponent implements OnInit {
 
   manajarRated(voto:number):void {
     alert(voto)
+  }
+
+  cargarDatos(){
+    this._peliculasService.obtenerLandingPage().subscribe(landingPage => {
+      this.peliculasEnCines = landingPage.enCines;
+      this.peliculasProximosEstrenos = landingPage.proximosEstrenos;
+    });
+  }
+
+  borrado(){
+    this.cargarDatos();
   }
 
 
