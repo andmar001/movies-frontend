@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 import { Observable } from 'rxjs';
-import { LandingPageDTO, PeliculaCreacionDTO, PeliculaDTO, PeliculaPostGet } from './pelicula';
+import { LandingPageDTO, PeliculaCreacionDTO, PeliculaDTO, PeliculaPostGet, PeliculaPutGet } from './pelicula';
 import { formatearFecha } from '../utilidades/utilidades';
 
 @Injectable({
@@ -26,10 +26,20 @@ export class PeliculasService {
     return this._http.get<PeliculaPostGet>(`${this.apiURL}/PostGet`);
   }
 
+  public PutGet(id:number):Observable<PeliculaPutGet>{
+    return this._http.get<PeliculaPutGet>(`${this.apiURL}/PutGet/${id}`);
+  }
+
   public crear(pelicula:PeliculaCreacionDTO){
     const formData = this.ConstruirFormData(pelicula);
 
     return this._http.post(this.apiURL, formData);
+  }
+
+  public editar(id:number, pelicula:PeliculaCreacionDTO){
+    const formData = this.ConstruirFormData(pelicula);
+
+    return this._http.put(`${this.apiURL}/${id}`, formData);
   }
 
   public ConstruirFormData(pelicula:PeliculaCreacionDTO):FormData{
