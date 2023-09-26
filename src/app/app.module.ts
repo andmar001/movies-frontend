@@ -40,6 +40,7 @@ import { AutocompleteActoresComponent } from './actores/autocomplete-actores/aut
 import { MostrarErroresComponent } from './utilidades/mostrar-errores/mostrar-errores.component';
 import { DetallePeliculaComponent } from './peliculas/detalle-pelicula/detalle-pelicula.component';
 import { AutorizadoComponent } from './seguridad/autorizado/autorizado.component';
+import { LoginComponent } from './seguridad/login/login.component';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { AutorizadoComponent } from './seguridad/autorizado/autorizado.component
     AutocompleteActoresComponent,
     MostrarErroresComponent,
     DetallePeliculaComponent,
-    AutorizadoComponent
+    AutorizadoComponent,
+    LoginComponent
   ],
   imports: [
     HttpClientModule,
