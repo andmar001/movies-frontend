@@ -12,16 +12,60 @@ export class SeguridadService {
   constructor( private _httpClient:HttpClient ) { }
 
   baseURL = environment.apiURL + 'cuentas';
+  private readonly llaveToken = 'token';
+  private readonly llaveExpiracion = 'token-expiracion';
+
 
   estaLogueado():boolean{
-    return false;
+    const token = localStorage.getItem(this.llaveToken);
+
+    if(!token){
+      return false;
+    }
+    // examinar la fecha de expiracion
+    const expiracion = localStorage.getItem(this.llaveExpiracion);
+    const expiracionFecha = new Date(expiracion);
+
+    if(expiracionFecha <= new Date()){
+      this.logOut();
+      return false;
+    }
+
+    return true;
+  }
+
+  // Desloguear al usuario
+  logOut(){
+    localStorage.removeItem(this.llaveToken);
+    localStorage.removeItem(this.llaveExpiracion);
   }
 
   obtenerRol():string{
     return 'admin';
   }
 
+  obtenerCampoJWT(campo:string):string{
+    const token = localStorage.getItem(this.llaveToken);
+
+    if(!token){
+      return '';
+    }
+
+    const datosToken = JSON.parse(atob(token.split('.')[1]));
+
+    return datosToken[campo];
+  }
+
   registrar(credenciales:credencialesUsuario):Observable<respuestaAutenticacion>{
     return this._httpClient.post<respuestaAutenticacion>(this.baseURL + '/crear', credenciales);
+  }
+
+  login(credenciales:credencialesUsuario):Observable<respuestaAutenticacion>{
+    return this._httpClient.post<respuestaAutenticacion>(this.baseURL + '/login', credenciales);
+  }
+
+  guardarToken(respuestaAutenticacion:respuestaAutenticacion){
+    localStorage.setItem(this.llaveToken, respuestaAutenticacion.token);
+    localStorage.setItem(this.llaveExpiracion, respuestaAutenticacion.expiracion.toString());
   }
 }

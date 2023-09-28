@@ -45,3 +45,7 @@ configurar leaflet en angular.json - styles
 
 # swet alert notificaciones 
 npm install --save sweetalert2 @sweetalert2/ngx-sweetalert2
+
+# usuario de prueba
+user: andrademaresantonio@gmail.com
+password: AndMar*23
