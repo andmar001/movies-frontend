@@ -50,6 +50,8 @@ npm install --save sweetalert2 @sweetalert2/ngx-sweetalert2
 user: andrademaresantonio@gmail.com
 password: AndMar*23
 
+# interceptor
+- se usa para agregar headers a las peticiones http
 
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZHJhZGVtYXJlc2FudG9uaW9AZ21haWwuY29tIiwiZXhwIjoxNzI3NTY3OTgzfQ.jb8yQuY8JDXvafRvrZX2xA3YmjTVgXkSmjEOtt9tn5A",
