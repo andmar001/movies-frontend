@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { PeliculaDTO } from '../pelicula';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Coordenada, CoordenadaConMensaje } from 'src/app/utilidades/mapa/coordenada';
+import { RatingService } from 'src/app/rating/rating.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-detalle-pelicula',
@@ -15,7 +17,8 @@ export class DetallePeliculaComponent implements OnInit {
   constructor(
     private _peliculasService:PeliculasService,
     private _activatedRoute:ActivatedRoute,
-    private _domSanitizer:DomSanitizer //para evitar que el usuario inyecte codigo malicioso
+    private _domSanitizer:DomSanitizer, //para evitar que el usuario inyecte codigo malicioso
+    private _ratingService:RatingService
     ) { }
 
     pelicula:PeliculaDTO;
@@ -40,6 +43,13 @@ export class DetallePeliculaComponent implements OnInit {
           })
         });
       });
+    }
+
+    rated(puntuacion:number){
+      this._ratingService.rate(this.pelicula.id, puntuacion)
+        .subscribe(()=>{
+          Swal.fire('Éxito', 'Tu voto ha sido registrado', 'success');
+        })
     }
 
     //metodo para generar la url de youtube

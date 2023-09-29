@@ -49,3 +49,9 @@ npm install --save sweetalert2 @sweetalert2/ngx-sweetalert2
 # usuario de prueba
 user: andrademaresantonio@gmail.com
 password: AndMar*23
+
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuZHJhZGVtYXJlc2FudG9uaW9AZ21haWwuY29tIiwiZXhwIjoxNzI3NTY3OTgzfQ.jb8yQuY8JDXvafRvrZX2xA3YmjTVgXkSmjEOtt9tn5A",
+    "expiracion": "2024-09-28T23:59:43.1183773Z"
+}
