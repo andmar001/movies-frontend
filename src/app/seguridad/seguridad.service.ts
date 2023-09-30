@@ -14,6 +14,7 @@ export class SeguridadService {
   baseURL = environment.apiURL + 'cuentas';
   private readonly llaveToken = 'token';
   private readonly llaveExpiracion = 'token-expiracion';
+  private readonly campoRol = 'role';
 
 
   estaLogueado():boolean{
@@ -41,7 +42,7 @@ export class SeguridadService {
   }
 
   obtenerRol():string{
-    return 'admin';
+    return this.obtenerCampoJWT(this.campoRol);
   }
 
   obtenerCampoJWT(campo:string):string{
