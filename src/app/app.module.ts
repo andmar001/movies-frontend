@@ -44,6 +44,7 @@ import { LoginComponent } from './seguridad/login/login.component';
 import { RegistroComponent } from './seguridad/registro/registro.component';
 import { FormularioAutenticacionComponent } from './seguridad/formulario-autenticacion/formulario-autenticacion.component';
 import { SeguridadInterceptorService } from './seguridad/seguridad-interceptor.service';
+import { IndiceUsuariosComponent } from './seguridad/indice-usuarios/indice-usuarios.component';
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import { SeguridadInterceptorService } from './seguridad/seguridad-interceptor.s
     AutorizadoComponent,
     LoginComponent,
     RegistroComponent,
-    FormularioAutenticacionComponent
+    FormularioAutenticacionComponent,
+    IndiceUsuariosComponent
   ],
   imports: [
     HttpClientModule,

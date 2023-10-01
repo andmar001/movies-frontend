@@ -17,6 +17,7 @@ import { DetallePeliculaComponent } from './peliculas/detalle-pelicula/detalle-p
 import { EsAdminGuard } from './es-admin.guard';
 import { LoginComponent } from './seguridad/login/login.component';
 import { RegistroComponent } from './seguridad/registro/registro.component';
+import { IndiceUsuariosComponent } from './seguridad/indice-usuarios/indice-usuarios.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,9 @@ const routes: Routes = [
   },
   {
     path:'registro', component:RegistroComponent
+  },
+  {
+    path:'usuarios', component: IndiceUsuariosComponent, canActivate: [ EsAdminGuard ]
   },
   {
     path:'**', redirectTo: ''
